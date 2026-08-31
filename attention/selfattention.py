@@ -39,6 +39,14 @@ class CausalAttention(nn.Module):
         context_vec = attn_weights @ values
         return context_vec
 
+class MultiHeadAttention(nn.Module):
+    def __init__(self,d_in,d_out,context_length,dropout,num_heads,qkv_bias=False):
+        super().__init__()
+        self.heads = nn.ModuleList(
+            [CausalAttention(d_in,d_out,context_length,dropout,qkv_bias=qkv_bias) for i in range(num_heads)]
+        )
+        # total returns dim_out * num_heads dimensional embeding
+
 if __name__ == "__main__": #testing purposes
     inputs=torch.rand(1000,6)
     batch= torch.stack((inputs,inputs),dim=0)
