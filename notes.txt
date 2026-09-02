@@ -1,4 +1,5 @@
 check BPE implemenetation
 check torch stack specifics: similar to np? differences? tensors?
+revise pyfunctions like zip
 check what layers can be used for ?
 check what layers are and how to visualise them for trining and demo
