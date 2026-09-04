@@ -5,7 +5,7 @@ class vocabmaker:
         result = re.split(r'([,.:;?_!"()\']|--|\s)', raw_text)
         result = [i for i in result if i.strip()]
         tokens=sorted(set(result))
-        tokens.extend("|EoF|","<|unk|>")
+        tokens.extend(["|EoF|","<|unk|>"])
         self.vocab={token:integer for integer,token in enumerate(tokens)}
     def getvocab(self):
         return self.vocab

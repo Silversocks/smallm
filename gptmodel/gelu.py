@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
+ #using approximation here, implement another one using my symregressor later.
 
-#using approximation here, implement another one using my symregressor later.
 class GELU(nn.Module):
     def __init__(self):
         super().__init__()
