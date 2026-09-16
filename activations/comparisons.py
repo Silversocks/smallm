@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
-import torch.nn 
+import torch.nn as nn 
+import torch
 import gelu
 
-gelu, relu = GELU(), nn.ReLU()
+gelu, relu = gelu.GELU(), nn.ReLU()
 
 x = torch.linspace(-3, 3, 100)
 y_gelu, y_relu = gelu(x), relu(x)
