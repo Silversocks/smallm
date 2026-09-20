@@ -11,6 +11,7 @@ class vocabmaker:
         return self.vocab
 
 if __name__ == "__main__":
-    with open("practicefiles/theverdict.txt","r") as f:
+    inputfile = "practicefiles/theverdict.txt"
+    with open(inputfile,"r") as f:
         buffer=f.read()
     print(vocabmaker(buffer).getvocab()[-10])
